@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - tabele</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <link rel="stylesheet" type="text/css"  href="CSS/tabele.css"/>
+        <script src="JS/tabele.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="rankingi">
+            <h2><br />Ważne zestawienia</h2>
+            <input type="radio" id="pucharyKluby" name="ranking" checked="checked" onclick="Pokaz()" />Kluby z największą ilością pucharów
+            <br /><input type="radio" id="pucharyZawodnicy" name="ranking" onclick="Pokaz()" />Zawodnicy z największą ilością pucharów
+            <br /><input type="radio" id="strzelcy" name="ranking" onclick="Pokaz()" />Najlepsi strzelcy w historii rozgrywek
+            <table>
+		<thead>
+                    <tr>
+			<th id="tytul1">Drużyna</th>
+			<th id="tytul2">Kraj</th>
+                        <th id="tytul3">Ilość tytułów</th>
+			<th id="tytul4">Lata wygranych</th>
+                    </tr>
+		</thead>
+		<tbody>
+                    <tr>
+			<td id="w1k1">Real Madryt</td>
+			<td id="w1k2">Hiszpania</td>
+			<td id="w1k3">13</td>
+                        <td id="w1k4">1956, 1957, 1958, 1959, 1960, 1966, 1998, 2000, 2002, 2014, 2016, 2017, 2018</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w2k1">AC Milan</td>
+			<td id="w2k2">Włochy</td>
+			<td id="w2k3">7</td>
+                        <td id="w2k4">1963, 1969, 1989, 1990, 1994, 2003, 2007</td>
+                    </tr>
+                    <tr>
+			<td id="w3k1">Bayern Monachium</td>
+			<td id="w3k2">Niemcy</td>
+			<td id="w3k3">5</td>
+                        <td id="w3k4">1974, 1975, 1976, 2001, 2013</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w4k1">FC Barcelona</td>
+			<td id="w4k2">Hiszpania</td>
+			<td id="w4k3">5</td>
+                        <td id="w4k4">1992, 2006, 2009, 2011, 2015</td>
+                    </tr>
+                    <tr>
+			<td id="w5k1">Liverpool F. C.</td>
+			<td id="w5k2">Anglia</td>
+			<td id="w5k3">5</td>
+                        <td id="w5k4">1977, 1978, 1981, 1984, 2005</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w6k1">Ajax Amsterdam</td>
+			<td id="w6k2">Holandia</td>
+			<td id="w6k3">4</td>
+                        <td id="w6k4">1971, 1972, 1973, 1995</td>
+                    </tr>
+                    <tr>
+			<td id="w7k1">Inter Mediolan</td>
+			<td id="w7k2">Włochy</td>
+			<td id="w7k3">3</td>
+                        <td id="w7k4">1964, 1965, 2010</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w8k1">Manchester United</td>
+			<td id="w8k2">Anglia</td>
+			<td id="w8k3">3</td>
+                        <td id="w8k4">1968, 1999, 2008</td>
+                    </tr>
+                    <tr>
+			<td id="w9k1">Juventus Turyn</td>
+			<td id="w9k2">Włochy</td>
+			<td id="w9k3">2</td>
+                        <td id="w9k4">1985, 1996</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w10k1">Benfica Lizbona</td>
+			<td id="w10k2">Portugalia</td>
+			<td id="w10k3">2</td>
+                        <td id="w10k4">1961, 1962</td>
+                    </tr>
+                    <tr>
+			<td id="w11k1">Nottingham Forest</td>
+			<td id="w11k2">Anglia</td>
+			<td id="w11k3">2</td>
+                        <td id="w11k4">1979, 1980</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w12k1">FC Porto</td>
+			<td id="w12k2">Portugalia</td>
+			<td id="w12k3">2</td>
+                        <td id="w12k4">1987, 2004</td>
+                    </tr>
+                    <tr>
+			<td id="w13k1">Celtic F. C.</td>
+			<td id="w13k2">Szkocja</td>
+			<td id="w13k3">1</td>
+                        <td id="w13k4">1967</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w14k1">Hamburger SV</td>
+			<td id="w14k2">Niemcy</td>
+			<td id="w14k3">1</td>
+                        <td id="w14k4">1983</td>
+                    </tr>
+                    <tr>
+			<td id="w15k1">Steaua Bukareszt</td>
+			<td id="w15k2">Rumunia</td>
+			<td id="w15k3">1</td>
+                        <td id="w15k4">1986</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w16k1">Olympique Marsylia</td>
+			<td id="w16k2">Francja</td>
+			<td id="w16k3">1</td>
+                        <td id="w16k4">1993</td>
+                    </tr>
+                    <tr>
+			<td id="w17k1">Borussia Dortmund</td>
+			<td id="w17k2">Niemcy</td>
+			<td id="w17k3">1</td>
+                        <td id="w17k4">1997</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w18k1">Chelsea F.C.</td>
+			<td id="w18k2">Anglia</td>
+			<td id="w18k3">1</td>
+                        <td id="w18k4">2012</td>
+                    </tr>
+                    <tr>
+			<td id="w19k1">Feyenoord Rotterdam</td>
+			<td id="w19k2">Holandia</td>
+			<td id="w19k3">1</td>
+                        <td id="w19k4">1970</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w20k1">Aston Villa</td>
+			<td id="w20k2">Anglia</td>
+			<td id="w20k3">1</td>
+                        <td id="w20k4">1982</td>
+                    </tr>
+                    <tr>
+			<td id="w21k1">PSV Eindhoven</td>
+			<td id="w21k2">Holandia</td>
+			<td id="w21k3">1</td>
+                        <td id="w21k4">1988</td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w22k1">Crvena Zvezda Belgrad</td>
+			<td id="w22k2">Serbia</td>
+			<td id="w22k3">1</td>
+                        <td id="w22k4">1991</td>
+                    </tr>
+		</tbody>
+                <tfoot>
+                    <tr>
+			<td id="w23k1"></td>
+			<td id="w23k2"></td>
+                        <td id="w23k3"></td>
+			<td id="w23k4"></td>
+                    </tr>
+                    <tr class="parzysty">
+			<td id="w24k1"></td>
+			<td id="w24k2"></td>
+                        <td id="w24k3"></td>
+			<td id="w24k4"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+            (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+            })(jQuery);
+            $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                });
+        </script>
+    </body>
+</html>

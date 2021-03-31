@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - konkurs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/konkurs.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="przegrana">
+            <h4>Niestety, tym razem się nie powiodło.</h4>
+            <p>Nie udało Ci się prawidłowo odpowiedzieć na przynajmniej 12 pytań w quizie.</p>
+            <p>To nie było jednak ostatnie losowanie. Śledź uważnie naszą stronę, a następnym razem pójdzie Ci lepiej.</p>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+            (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+            })(jQuery);
+            $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                });
+        </script>
+    </body>
+</html>

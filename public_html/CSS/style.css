@@ -1,0 +1,307 @@
+html
+{
+    background-image: url("../Obrazy/tlo.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    min-height: 100%;
+}
+
+body 
+{ 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 51, 204, 0.85) 65%, rgba(255, 255, 255, 0.85) 100%);
+    align-items: stretch;
+    font-size: 18px;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+h1, h2, h3
+{ 
+    color: gainsboro;
+    padding: 0.2%;
+    text-align: center; 
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+footer
+{
+    color: gainsboro;
+    padding: 0.2%;
+    text-align: center; 
+}
+
+.srodek 
+{ 
+    text-align: center; 
+}
+
+nav
+{ 
+    float: left; 
+    width: 100%; 
+}
+
+footer 
+{ 
+    position: fixed;
+    bottom: 0;
+    width: 98.5%;
+    background: #ccccff; 
+    color: gray;
+    clear: both; 
+    border-radius: 15px;
+}
+
+nav a
+{
+    background: #ccccff;
+    color: gray;
+    float: left;
+    display: block;
+    width: 24.5%;
+    margin-right: 0.5%;
+    padding: 1% 0;
+    font-size: 110%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px black;
+    transition: 0.2s;
+}
+
+nav a:link
+{
+    text-decoration:none;
+}
+
+nav a:visited
+{
+    color:#666666;
+}
+
+nav a:hover
+{
+    background: silver;
+    text-decoration: underline;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+nav a:active
+{
+    background: gold;
+    text-decoration: underline;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+section 
+{ 
+    clear: both; 
+    color: gainsboro;
+}
+
+#baner
+{ 
+    width: 100%; 
+    align-content: center;
+    height: 200px; 
+    border-radius: 15px; 
+}
+
+p
+{
+    padding: 1%;
+    font-size: 110%;
+}
+/*strona główna*/
+#czolowka
+{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+audio
+{
+    width: 400px;
+}
+
+#hymn
+{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+/*galeria*/
+#zdjecia
+{
+    text-align: center;
+}
+
+.miniatury
+{
+    width: 25%;
+    margin: 2%;
+    height: 200px;
+    border-radius: 100px;
+    border-style: double;
+    border-color: silver;
+}
+
+.miniatury:hover
+{
+    border-radius: 0;
+}
+/*forum*/
+#pisanie table
+{
+    margin-left: 10%;
+    width: 80%;
+}
+
+.informacja
+{
+    width: 10%;
+    color: gainsboro;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#nick, #komentarz
+{
+    background-color: rgba(0, 51, 204, 0.3);
+    color: gainsboro;
+}
+
+#dodaj
+{
+    margin-left: 10%;
+    background-color: rgba(0, 51, 204, 0.5);
+    color: gainsboro;
+}
+
+#spis
+{
+    margin-left: 25%;
+    margin-bottom: 20px;
+    background-image: url("../Obrazy/komentarze.jpg");
+    background-size: 100% 100%;
+    color: white;
+    text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=================================================Responsywność=============================================*/
+@media screen and (max-width: 720px) 
+{
+    nav a
+    { 
+        width: 48%;
+        padding: 10px 0;
+        font-size: 140%;
+    }
+    .slajd 
+    {
+        width: 45%; 
+    }
+    #baner, .miniatury
+    {
+        height: 160px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 720px) 
+{
+    body 
+    { 
+        font-size: 13px; 
+    }
+    h1 
+    { 
+        font-size: 23px; 
+    }
+    h2 
+    { 
+        font-size: 18px; 
+    }
+    h3 
+    { 
+        text-align: center;
+        font-size: 16px; 
+    }
+    #baner, .miniatury
+    {
+        height: 130px;
+    }
+    video
+    {
+        width:300px;
+        height:200px;
+    }
+    #spis
+    {
+        height: 15em;
+        width: 30em;
+    }
+    footer
+    {
+        width: 97%;
+    }
+}
+
+@media screen and (max-width: 481px) 
+{
+    body 
+    { 
+        font-size: 12px;
+    }
+    h1 
+    { 
+        font-size: 22px; 
+    }
+    h2 
+    { 
+        font-size: 17px; 
+    }
+    h3 
+    { 
+        text-align: center;
+        font-size: 15px; 
+    }
+    nav button
+    { 
+        font-size: 20px;
+        padding: 10px 0;
+        border-bottom: 3px solid white;
+        width: 98%;
+    }
+    .slajd 
+    {
+        width: 95%; 
+    }
+    #baner, .miniatury
+    {
+        height: 100px;
+    }
+    video
+    {
+        width: 250px;
+        height: 180px;
+    }
+    audio
+    {
+        width: 250px;
+    }
+    #spis
+    {
+        height: 10em;
+        width: 20em;
+    }
+    footer
+    {
+        width: 95.5%;
+    }
+}
+

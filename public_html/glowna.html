@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - strona główna</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="blok">
+            <h2><br />Co to jest Liga Mistrzów?</h2>
+            <p>Liga Mistrzów UEFA to międzynarodowe, europejskie, klubowe rozgrywki piłkarskie, utworzone z inicjatywy UEFA w 1992. Stanowi kontynuację Pucharu Europy Mistrzów Krajowych (zwanego też Pucharem Europy lub Pucharem Mistrzów) i regularnie prowadzone przez tę organizację od sezonu 1992/1993 w ramach europejskich pucharów.  Przeznaczone dla najlepszych męskich drużyn klubowych (zajmujących czołowe miejsca w europejskich ligach krajowych) oraz rozgrywane na europejskich stadionach. Są to bezsprzecznie najbardziej prestiżowe klubowe zmagania piłkarskie w Europie.</p>
+            <article>
+                <h2><br />Zaprezentowano czołówkę na sezon 2018/2019!</h2>
+                <div id="czolowka">
+                    <video width="400" height="300" controls>
+                    <source src="Multimedia/czolowka.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h2><br />Odsłuchaj hymn Ligi Mistrzów!</h2>
+                <div id="hymn">
+                    <audio controls>
+                    <source src="Multimedia/hymn.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+            </article>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+            (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+            })(jQuery);
+            $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+table
+{
+    background: silver;
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1pt #0033ff double;
+}
+
+caption
+{
+    font-size: 120%;
+    font-weight: bold;
+}
+
+thead
+{
+    background:#0033cc;
+    color: #ffffff;
+    font-size: 110%;
+    padding: 5pt;
+}
+
+tbody td, tbody th, tfoot td, tfoot th
+{
+    border: 1pt solid #0033ff;
+    color: #0033ff;
+    opacity: 0.9;
+}
+
+*.parzysty 
+{
+background: #ffffff; 
+box-shadow: inset 1px 1px 2px 2px #0033ff;
+}
+
+section
+{
+    text-align: center;
+}

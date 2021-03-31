@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - forum</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="forum">
+            <h2><br />Sekcja komentarzy</h2>
+            <div id="pisanie">
+                <br />
+                <table>
+                <tbody>
+                    <tr>
+                        <td class="informacja"><label for="nick">Nick:</label></td>
+                        <td><input id="nick" name="nick" title="Wpisz swój nick"/></td>
+                    </tr>
+                    <tr>
+                        <td class="informacja">Komentarz:</td>
+                        <td><textarea id="komentarz" rows="4" cols="50"></textarea></td>
+                    </tr>
+                </tbody>
+                </table>
+                <button id="dodaj">Dodaj komentarz</button>
+            </div>
+            <br /><textarea id="spis" rows="20" cols="70"></textarea>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+            (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+            })(jQuery);
+            $(document).ready(function(){
+                $("#spis").val(localStorage.getItem("Spis"));
+            });
+            $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                    $("#dodaj").click(function(){
+                        var tekst;
+                        localStorage.setItem("nick", $("#nick").val());
+                        localStorage.setItem("komentarz", $("#komentarz").val());
+                        $("#nick").val("");
+                        $("#komentarz").val("");
+                        tekst=localStorage.getItem("nick")+" napisał(a): "+localStorage.getItem("komentarz")+"\n";
+                        if(localStorage.getItem("Spis")===null) localStorage.setItem("Spis", tekst);
+                        else localStorage.setItem("Spis", localStorage.getItem("Spis")+tekst);
+                        $("#spis").val(localStorage.getItem("Spis"));
+                    });
+                });
+        </script>
+    </body>
+</html>

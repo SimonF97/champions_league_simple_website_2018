@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - galeria</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/lightbox.css" />
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="zdjecia">
+            <h2><br />Zdjęcia</h2>
+            <a href="zdjeciaGaleria/arsenalSevilla.jpg" data-lightbox="galeria" data-title="Tradycyjne rozpoczęcie meczu Ligi Mistrzów. Mecz Arsenalu z Sevillą.">
+                <img src="zdjeciaGaleria/arsenalSevilla.jpg" alt="Początek" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/benficaBarcelona.jpg" data-lightbox="galeria" data-title="Akcja z meczu Benfica-Barcelona w 1961 roku. Portugalczycy wygrali to spotkanie 3-2.">
+                <img src="zdjeciaGaleria/benficaBarcelona.jpg" alt="BenficaBarcelona" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/distefano.jpg" data-lightbox="galeria" data-title="Alfredo Di Stéfano pozujący ze swoimi pięcioma Pucharami Europy.">
+                <img src="zdjeciaGaleria/distefano.jpg" alt="DiStefano" class="miniatury"/>
+            </a>
+            <br />
+            <a href="zdjeciaGaleria/drogba.jpg" data-lightbox="galeria" data-title="Drogba strzelający zwycięską bramkę w konkursie rzutów karnych. Finał Chelsea Londyn vs Bayern Monachium w 2012 roku.">
+                <img src="zdjeciaGaleria/drogba.jpg" alt="Drogba" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/liverpool05.jpg" data-lightbox="galeria" data-title="Piłkarze Liverpoolu cieszący się z triumfu po świetnym powrocie (przegrywali do przerwy 3-0). Stambuł, 2005 rok.">
+                <img src="zdjeciaGaleria/liverpool05.jpg" alt="Live2005" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/liverpoolKoszulka.jpg" data-lightbox="galeria" data-title="Koszulka Liverpoolu z honorową tarczą za zdobycie pięciu tytułów.">
+                <img src="zdjeciaGaleria/liverpoolKoszulka.jpg" alt="Emblemat" class="miniatury"/>
+            </a>
+            <br />
+            <a href="zdjeciaGaleria/marsylia1993.jpg" data-lightbox="galeria" data-title="Zwycięski skład Olympique Marsylia. Wygrali oni pierwszą edycję po zmianie formatu rozgrywek.">
+                <img src="zdjeciaGaleria/marsylia1993.jpg" alt="Marsylia" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/rm18.jpg" data-lightbox="galeria" data-title="Obecni obrońcy tytułu - Real Madryt. Kijów, 2018 rok.">
+                <img src="zdjeciaGaleria/rm18.jpg" alt="RM2018" class="miniatury"/>
+            </a>
+            <a href="zdjeciaGaleria/zidane2002.jpg" data-lightbox="galeria" data-title="Zinedine Zdiane składający się do woleja. Ten gol dał w 2002 roku Realowi Madryt wygraną nad Bayerem Leverkusen oraz dziewąiąty Puchar Europy.">
+                <img src="zdjeciaGaleria/zidane2002.jpg" alt="Zidane" class="miniatury"/>
+            </a>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script src="JS/lightbox.js"></script>
+        <script>
+            (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+            })(jQuery);
+            $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                });
+        </script>
+    </body>
+</html>

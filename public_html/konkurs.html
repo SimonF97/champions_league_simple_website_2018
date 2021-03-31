@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - konkurs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/konkurs.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="formularz">
+            <h2><br />Do wygrania bilety na nowy sezon!</h2>
+            <button class="accordion">Dane osobowe</button>
+            <div id="dane" class="panel">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="labels"><label for="imie">Imię:</label></td>
+                        <td><input id="imie" name="imie" class="formularz" title="Wpisz swoje imię" placeholder="Jan"/></td>
+                        <td id="imie_error" class="czerwone"></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td class="labels"><label for="nazwisko">Nazwisko:</label></td>
+                        <td><input id="nazwisko" name="nazwisko" class="formularz" title="Wpisz swoje nazwisko" placeholder="Kowalski"/></td>
+                        <td id="nazwisko_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="wiek">Wiek:</label></td> 
+                        <td><input id="wiek" name="wiek" class="formularz" title="Podaj swój wiek" placeholder="21"/></td>
+                        <td id="wiek_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="adres">Adres e-mail:</label></td> 
+                        <td><input id="adres" name="adres" class="formularz" title="Podaj swój adres e-mail" placeholder="abc@pollub.com"/></td>
+                        <td id="adres_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="telefon">Numer telefonu:</label></td> 
+                        <td><input id="telefon" name="telefon" maxlength="9" title="Podaj swój numer telefonu (9 znaków)" class="formularz" placeholder="123456789"/></td>
+                        <td id="telefon_error" class="czerwone"></td> 
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <button class="accordion">Quiz</button>
+            <div id="quiz" class="panel">
+                <br/><label id="pytanie1">W którym roku Puchar Europy zmienił nazwę na Ligę Mistrzów?</label><br/>
+                <input type="radio" name="pytanie1" id="p1o1"/>1990
+                <input type="radio" name="pytanie1" id="p1o2"/>1997
+                <input type="radio" name="pytanie1" id="p1o3"/>1992
+                <input type="radio" name="pytanie1" id="p1o4"/>2003<br/>
+                
+                <br/><label id="pytanie2">W jakim mieście został rozegrany pierwszy finał Pucharu Europy?</label><br/>
+                <input type="radio" name="pytanie2" id="p2o1"/>w Paryżu
+                <input type="radio" name="pytanie2" id="p2o2"/>w Londynie
+                <input type="radio" name="pytanie2" id="p2o3"/>w Berlinie
+                <input type="radio" name="pytanie2" id="p2o4"/>w Rzymie<br/>
+                
+                <br/><label id="pytanie3">Specjalny emblemat na koszulkach jest przyznawany, jeśli drużyna wygra co najmniej pięć rozgrywek w swojej historii lub 3 z rzędu. Który z klubów nie ma zaszczytu noszenia go?</label><br/>
+                <input type="radio" name="pytanie3" id="p3o1"/>Liverpool
+                <input type="radio" name="pytanie3" id="p3o2"/>Real Madryt
+                <input type="radio" name="pytanie3" id="p3o3"/>Manchester United
+                <input type="radio" name="pytanie3" id="p3o4"/>Ajax Amsterdam<br/>
+                
+                <br/><label id="pytanie4">Który zawodnik strzelił 4 bramki w finale w 1960 roku?</label><br/>
+                <input type="radio" name="pytanie4" id="p4o1"/>Alfredo Di Stéfano
+                <input type="radio" name="pytanie4" id="p4o2"/>Ferenc Puskás
+                <input type="radio" name="pytanie4" id="p4o3"/>Paco Gento
+                <input type="radio" name="pytanie4" id="p4o4"/>Pelé<br/>
+                
+                <br/><label id="pytanie5">Kto był pierwszym włoskim finalistą?</label><br/>
+                <input type="radio" name="pytanie5" id="p5o1"/>Juventus Turyn
+                <input type="radio" name="pytanie5" id="p5o2"/>SSC Napoli
+                <input type="radio" name="pytanie5" id="p5o3"/>AC Milan
+                <input type="radio" name="pytanie5" id="p5o4"/>Fiorentina<br/>
+                
+                <br/><label id="pytanie6">Real Madryt zdobył pierwsze 5 Pucharów Europy. Który klub był drugim, który zgarnął to trofeum?</label><br/>
+                <input type="radio" name="pytanie6" id="p6o1"/>Liverpool
+                <input type="radio" name="pytanie6" id="p6o2"/>Bayern Monachium
+                <input type="radio" name="pytanie6" id="p6o3"/>FC Barcelona
+                <input type="radio" name="pytanie6" id="p6o4"/>Benfica Lizbona<br/>
+                
+                <br/><label id="pytanie7">Który brytyjski klub jako pierwszy sięgnął po trofeum?</label><br/>
+                <input type="radio" name="pytanie7" id="p7o1"/>Liverpool
+                <input type="radio" name="pytanie7" id="p7o2"/>Celtic
+                <input type="radio" name="pytanie7" id="p7o3"/>Manchester United
+                <input type="radio" name="pytanie7" id="p7o4"/>Nottingham Forest<br/>
+                
+                <br/><label id="pytanie8">W latach 1971-1973 Ajax Amsterdam wygrał 3 razy z rzędu Puchar Mistrzów. Który piłkarz był liderem tamtej ekipy?</label><br/>
+                <input type="radio" name="pytanie8" id="p8o1"/>Patrick Kluivert
+                <input type="radio" name="pytanie8" id="p8o2"/>Johan Cruijff
+                <input type="radio" name="pytanie8" id="p8o3"/>Ruud Gullit
+                <input type="radio" name="pytanie8" id="p8o4"/>Dirk Advocaat<br/>
+                
+                <br/><label id="pytanie9">Który zawodnik nigdy nie zdobył pucharu Ligi Mistrzów?</label><br/>
+                <input type="radio" name="pytanie9" id="p9o1"/>Zlatan Ibrahimović
+                <input type="radio" name="pytanie9" id="p9o2"/>Ryan Giggs
+                <input type="radio" name="pytanie9" id="p9o3"/>Steven Gerrard
+                <input type="radio" name="pytanie9" id="p9o4"/>David Villa<br/>
+                
+                <br/><label id="pytanie10">Na stadionie Heysel rozegrano finał między Liverpoolem a Juventusem. Doszło wtedy do starcia między kibicami obu drużyn, w wyniku czego śmierć poniosło 39 osób. W którym roku miało miejsce to wydarzenie?</label><br/>
+                <input type="radio" name="pytanie10" id="p10o1"/>1990
+                <input type="radio" name="pytanie10" id="p10o2"/>1985
+                <input type="radio" name="pytanie10" id="p10o3"/>1981
+                <input type="radio" name="pytanie10" id="p10o4"/>1978<br/>
+                
+                <br/><label id="pytanie11">W którym roku doszło do pierwszego konkursu jedenastek w finale Pucharu Europy?</label><br/>
+                <input type="radio" name="pytanie11" id="p11o1"/>1984
+                <input type="radio" name="pytanie11" id="p11o2"/>1979
+                <input type="radio" name="pytanie11" id="p11o3"/>1983
+                <input type="radio" name="pytanie11" id="p11o4"/>1989<br/>
+                
+                <br/><label id="pytanie12">W 2014 roku doszło do niecodziennego wydarzenia. Po raz pierwszy w finale spotkały się dwie drużyny z jednego miasta. Jakie to było miasto?</label><br/>
+                <input type="radio" name="pytanie12" id="p12o1"/>Mediolan
+                <input type="radio" name="pytanie12" id="p12o2"/>Londyn
+                <input type="radio" name="pytanie12" id="p12o3"/>Madryt
+                <input type="radio" name="pytanie12" id="p12o4"/>Manchester<br/>
+                
+                <br/><label id="pytanie13">Kto sędziował finał między Manchesterem United a Bayernem Monachium w 1999 roku?</label><br/>
+                <input type="radio" name="pytanie13" id="p13o1"/>Anders Frisk
+                <input type="radio" name="pytanie13" id="p13o2"/>Pierluigi Collina
+                <input type="radio" name="pytanie13" id="p13o3"/>Howard Webb
+                <input type="radio" name="pytanie13" id="p13o4"/>Mario van der Ende<br/>
+                
+                <br/><label id="pytanie14">Kto jest najmłodszym debiutantem w historii Ligi Mistrzów UEFA?</label><br/>
+                <input type="radio" name="pytanie14" id="p14o1"/>Youri Tielemans
+                <input type="radio" name="pytanie14" id="p14o2"/>Lionel Messi
+                <input type="radio" name="pytanie14" id="p14o3"/>Kylian Mbappé
+                <input type="radio" name="pytanie14" id="p14o4"/>Celestine Babayaro<br/>
+                
+                <br/><label id="pytanie15">Obecny prezes PZPN, Zbigniew Boniek ma w swoim dorobku Puchar Europy. Z jaką drużyną go zdobył?</label><br/>
+                <input type="radio" name="pytanie15" id="p15o1"/>AS Roma
+                <input type="radio" name="pytanie15" id="p15o2"/>Liverpool
+                <input type="radio" name="pytanie15" id="p15o3"/>Juventus Turyn
+                <input type="radio" name="pytanie15" id="p15o4"/>Real Madryt<br/>
+                
+                <br />
+                <button id="wyslij">Weź udział</button>
+                <button id="anuluj">Anuluj</button>
+            </div>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+            $(document).ready(function(){
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) 
+                {
+                    acc[i].addEventListener("click", function()
+                    {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    
+                    if (panel.style.display === "block") panel.style.display = "none";
+                    else panel.style.display = "block";
+                    });
+                }
+            });
+        </script>
+        <script>
+                (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+                })(jQuery);
+                $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                    
+                    $("#wyslij").click(function(){
+                        ok=true;
+                        obiektImie = /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$/;
+                        if (!$("#imie").sprawdzPole(obiektImie)) {
+                            $("#imie_error").text("Wprowadź poprawnie imię!");
+                            ok=false;
+                        }
+                        else {
+                            $("#imie_error").text("");
+                        }                
+        
+                        obiektNazw = /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$/;
+                        if (!$("#nazwisko").sprawdzPole(obiektNazw)) {
+                            $("#nazwisko_error").text("Wprowadź poprawnie nazwisko!");
+                            ok=false;
+                        }
+                        else {
+                            $("#nazwisko_error").text("");
+                        }
+                        
+                        
+                        obiektWiek=/^[1-9][0-9]|[3-9]$/;
+                        if (!$("#wiek").sprawdzPole(obiektWiek)) {
+                            $("#wiek_error").text("Wprowadź poprawnie wiek!");
+                            ok=false;
+                        }
+                        else {
+                            if($("#wiek").val()<=17)
+                            {
+                                $("#wiek_error").text("Tylko osoby pełnoletnie mogą wziąć udział w losowaniu!");
+                                ok=false;
+                            }
+                            else $("#wiek_error").text("");
+                        }
+                        
+                        obiektMail=/^[a-zA-Z0-9.]{1,}[@][a-zA-Z0-9]{1,}[.][a-zA-Z0-9]{1,}$/;
+                        if (!$("#adres").sprawdzPole(obiektMail)) {
+                            $("#adres_error").text("Wprowadź poprawnie e-mail!");
+                            ok=false;
+                        }
+                        else {
+                            $("#adres_error").text("");
+                        }
+                        
+                        obiektTelefon=/^[0-9]{9}$/;
+                        if (!$("#telefon").sprawdzPole(obiektTelefon)) {
+                            $("#telefon_error").text("Wprowadź poprawnie numer telefonu!");
+                            ok=false;
+                        }
+                        else {
+                            $("#telefon_error").text("");
+                        }
+                        
+                        var punkty=0;
+                        if(!$("input[name=pytanie1]").is(":checked") || !$("input[name=pytanie2]").is(":checked") 
+                        || !$("input[name=pytanie3]").is(":checked") || !$("input[name=pytanie4]").is(":checked")
+                        || !$("input[name=pytanie5]").is(":checked") || !$("input[name=pytanie6]").is(":checked")
+                        || !$("input[name=pytanie7]").is(":checked") || !$("input[name=pytanie8]").is(":checked")
+                        || !$("input[name=pytanie9]").is(":checked") || !$("input[name=pytanie10]").is(":checked")
+                        || !$("input[name=pytanie11]").is(":checked") || !$("input[name=pytanie12]").is(":checked")
+                        || !$("input[name=pytanie13]").is(":checked") || !$("input[name=pytanie14]").is(":checked")
+                        || !$("input[name=pytanie15]").is(":checked")){
+                            alert("Nie odpowiedziano na wszystkie pytania!");
+                            ok=false;
+                        }
+                        
+                        if($("#p1o3").is(":checked")) punkty++;
+                        if($("#p2o1").is(":checked")) punkty++;
+                        if($("#p3o3").is(":checked")) punkty++;
+                        if($("#p4o2").is(":checked")) punkty++;
+                        if($("#p5o4").is(":checked")) punkty++;
+                        if($("#p6o4").is(":checked")) punkty++;
+                        if($("#p7o2").is(":checked")) punkty++;
+                        if($("#p8o2").is(":checked")) punkty++;
+                        if($("#p9o1").is(":checked")) punkty++;
+                        if($("#p10o2").is(":checked")) punkty++;
+                        if($("#p11o1").is(":checked")) punkty++;
+                        if($("#p12o3").is(":checked")) punkty++;
+                        if($("#p13o2").is(":checked")) punkty++;
+                        if($("#p14o4").is(":checked")) punkty++;
+                        if($("#p15o3").is(":checked")) punkty++;
+                        
+                        if (ok) {
+                            sessionStorage.setItem("imie", $("#imie").val());
+                            sessionStorage.setItem("nazwisko", $("#nazwisko").val());
+                            sessionStorage.setItem("wiek", $("#wiek").val());
+                            sessionStorage.setItem("adres", $("#adres").val());
+                            sessionStorage.setItem("telefon", $("#telefon").val());
+                            sessionStorage.setItem("punktacja", punkty);
+                            if(punkty>=12) window.location.href="konkursWygrana.html";
+                            else window.location.href="konkursPrzegrana.html";
+                            return true;
+                        }
+                        else return false;
+                    });
+                    $("#anuluj").click(function(){
+                        $("#imie").val("");
+                        $("#nazwisko").val("");
+                        $("#wiek").val("");
+                        $("#adres").val("");
+                        $("#telefon").val("");
+                        $("#imie_error").text("");
+                        $("#nazwisko_error").text("");
+                        $("#wiek_error").text("");
+                        $("#adres_error").text("");
+                        $("#telefon_error").text("");
+                    });
+                });
+            </script>
+    </body>
+</html>

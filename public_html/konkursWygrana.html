@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Liga mistrzów - konkurs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/konkurs.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="glowna.html"><img src="Obrazy/baner.jpg" alt="Baner" id="baner"/></a>
+            <nav>
+                <a href="forum.html">Forum</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="tabele.html">Najważniejsze rankingi</a>
+                <a id="pokazKonkurs">Konkurs</a>
+            </nav>
+        </header>
+        <section id="wygrana">
+            <h4><br />Gratulacje!</h4>
+            <p>Udało ci się odpowiedzieć dobrze na co najmniej 12 pytań. Weźmiesz teraz udział w losowaniu. Możesz zmienić podane wcześniej dane, jeśli chcesz.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="labels"><label for="imie">Imię:</label></td>
+                        <td><input id="imie" name="imie" class="formularz" title="Wpisz swoje imię"/></td>
+                        <td id="imie_error" class="czerwone"></td> 
+                    </tr>
+                    
+                    <tr>
+                        <td class="labels"><label for="nazwisko">Nazwisko:</label></td>
+                        <td><input id="nazwisko" name="nazwisko" class="formularz" title="Wpisz swoje nazwisko"/></td>
+                        <td id="nazwisko_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="wiek">Wiek:</label></td> 
+                        <td><input id="wiek" name="wiek" class="formularz" title="Podaj swój wiek"/></td>
+                        <td id="wiek_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="adres">Adres e-mail:</label></td> 
+                        <td><input id="adres" name="adres" class="formularz" title="Podaj swój adres e-mail"/></td>
+                        <td id="adres_error" class="czerwone"></td> 
+                    </tr>
+                                                
+                    <tr>
+                        <td class="labels"><label for="telefon">Numer telefonu:</label></td> 
+                        <td><input id="telefon" name="telefon" maxlength="9" title="Podaj swój numer telefonu (9 znaków)" class="formularz"/></td>
+                        <td id="telefon_error" class="czerwone"></td> 
+                    </tr>
+                </tbody>
+            </table>
+            <br /><button id="wyslij">Zmień</button>
+        </section>
+        <footer>&copy;UEFA Champions League</footer>
+        <script>
+                    (function ($) {
+                    $.fn.sprawdzPole = function (reg) {
+                    if(!reg.test(this.val())) return (false);
+                    else return (true);
+                    };
+                })(jQuery);
+                $(document).ready(function () {
+                    $('#imie').val(sessionStorage.getItem("imie"));
+                    $('#nazwisko').val(sessionStorage.getItem("nazwisko"));
+                    $('#wiek').val(sessionStorage.getItem("wiek"));
+                    $('#adres').val(sessionStorage.getItem("adres"));
+                    $('#telefon').val(sessionStorage.getItem("telefon"));
+                });
+                $(function() {
+                    $("#pokazKonkurs").click(function(){
+                        if(sessionStorage.length===0) window.location.href="konkurs.html";
+                        else if(sessionStorage.getItem("punktacja")>=12) window.location.href="konkursWygrana.html";
+                        else if(sessionStorage.getItem("punktacja")<12) window.location.href="konkursPrzegrana.html";
+                    });
+                    
+                    $("#wyslij").click(function(){
+                        ok=true;
+                        obiektImie = /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$/;
+                        if (!$("#imie").sprawdzPole(obiektImie)) {
+                            $("#imie_error").text("Wprowadź poprawnie imię!");
+                            ok=false;
+                        }
+                        else {
+                            $("#imie_error").text("");
+                        }                
+        
+                        obiektNazw = /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$/;
+                        if (!$("#nazwisko").sprawdzPole(obiektNazw)) {
+                            $("#nazwisko_error").text("Wprowadź poprawnie nazwisko!");
+                            ok=false;
+                        }
+                        else {
+                            $("#nazwisko_error").text("");
+                        }
+                        
+                        
+                        obiektWiek=/^[1-9][0-9]|[3-9]$/;
+                        if (!$("#wiek").sprawdzPole(obiektWiek)) {
+                            $("#wiek_error").text("Wprowadź poprawnie wiek!");
+                            ok=false;
+                        }
+                        else {
+                            if($("#wiek").val()<=17)
+                            {
+                                $("#wiek_error").text("Tylko osoby pełnoletnie mogą wziąć udział w losowaniu!");
+                                ok=false;
+                            }
+                            else $("#wiek_error").text("");
+                        }
+                        
+                        obiektMail=/^[a-zA-Z0-9.]{1,}[@][a-zA-Z0-9]{1,}[.][a-zA-Z0-9]{1,}$/;
+                        if (!$("#adres").sprawdzPole(obiektMail)) {
+                            $("#adres_error").text("Wprowadź poprawnie e-mail!");
+                            ok=false;
+                        }
+                        else {
+                            $("#adres_error").text("");
+                        }
+                        
+                        obiektTelefon=/^[0-9]{9}$/;
+                        if (!$("#telefon").sprawdzPole(obiektTelefon)) {
+                            $("#telefon_error").text("Wprowadź poprawnie numer telefonu!");
+                            ok=false;
+                        }
+                        else {
+                            $("#telefon_error").text("");
+                        }
+                        
+                        if (ok) {
+                            sessionStorage.setItem("imie", $("#imie").val());
+                            sessionStorage.setItem("nazwisko", $("#nazwisko").val());
+                            sessionStorage.setItem("wiek", $("#wiek").val());
+                            sessionStorage.setItem("adres", $("#adres").val());
+                            sessionStorage.setItem("telefon", $("#telefon").val());
+                            return true;
+                        }
+                        else return false;
+                    });
+                });
+            </script>
+    </body>
+</html>
